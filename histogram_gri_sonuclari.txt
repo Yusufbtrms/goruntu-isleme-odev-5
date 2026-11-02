@@ -1,0 +1,24 @@
+Resim: images/Cat.jpg (1600x1598, 3 kanal, 2556800 piksel)
+OpenCV bu resmi B, G, R sirasiyla okur (cikti isimleri: kanal 0 = Mavi, 1 = Yesil, 2 = Kirmizi)
+
+GOREV 1 ve 2 - KANAL HISTOGRAMLARI (256 kutu)
+  Kanal          toplam piksel  ortalama en yuksek k  en yuksek sayikendi - OpenCV (|fark|)
+  Mavi (B)             2556800    120.74         202           34709                     0
+  Yesil (G)            2556800    148.83         225           37060                     0
+  Kirmizi (R)          2556800    175.92         226           43243                     0
+  Farkli kutu sayilariyla dogrulama (3 kanalin toplam mutlak farki; 0 = ayni): 256 kutu: 0; 128 kutu: 0; 64 kutu: 0; 16 kutu: 0; 10 kutu: 0;
+
+GOREV 3 - GRI DONUSUM: kendi fonksiyonlar ile OpenCV cvtColor(BGR2GRAY) arasindaki fark
+  Hata degeri = eslesen piksellerin mutlak farklarinin toplami (sum |kendi - OpenCV|)
+  Fonksiyon                                               mutlak fark top. farkli piksel    oran %  en buyuk
+  A) kendi, kayan nokta (0.299 R + 0.587 G + 0.114 B)                    0             0     0.000         0
+  B) kendi, 15 bit sabit nokta (9798, 19235, 3735; OpenCV 5.x)               0             0     0.000         0
+  C) basit ortalama (R + G + B) / 3                               13799193       2536186    99.194        17
+  D) yanlis kanal sirasi (B'ye R agirligi)                        26101361       2554641    99.916        29
+  E) kendi, 14 bit sabit nokta (4899, 9617, 1868; eski OpenCV)               0             0     0.000         0
+  (toplam 2556800 piksel)
+
+Kaydedilenler (cikti_histogram_gri):
+  1_histogramlar_opencv.png, 2_histogramlar_kendi.png : B, G, R kanal histogramlari (ust: mavi, orta: yesil, alt: kirmizi)
+  3_gri_opencv.png, 3_gri_kendi_kayan_nokta.png, 3_gri_kendi_sabit_nokta.png : gri resimler
+  3_fark_kayan_nokta_x50.png (50 kat buyutulmus), 3_fark_yanlis_sira.png : OpenCV gri resmiyle farklar

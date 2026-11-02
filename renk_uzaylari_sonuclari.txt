@@ -1,0 +1,53 @@
+Resim: images/Cat.jpg (800x799, 639200 piksel, OpenCV B-G-R sirasi)
+
+1) ILERI DONUSUMLER (BGR -> X): kendi fonksiyon (gostericiyle cagrildi) ile OpenCV cvtColor arasindaki fark
+  Donusum                                       mutlak fark top.farkli piksel   oran %  en buyuk
+  Gri: 14 bit sabit nokta                                    602         602    0.094         1   kanal: 602
+  Gri: 15 bit sabit nokta                                      0           0    0.000         0   kanal: 0
+  Gri: float32 (0.299f, 0.587f, 0.114f)                      493         493    0.077         1   kanal: 493
+  Gri: double (0.299, 0.587, 0.114)                          571         571    0.089         1   kanal: 571
+  YCrCb: PDF formulu                                       89937       82331   12.880         1   kanal: 219 53237 36481
+  YCrCb: OpenCV birebir                                        0           0    0.000         0   kanal: 0 0 0
+  HSV: PDF formulu                                        219824       11968    1.872       180   kanal: 213869 5955 0
+  HSV: OpenCV birebir                                          0           0    0.000         0   kanal: 0 0 0
+  Lab: PDF formulu (OpenCV'de tablo/sabit nokta)          186274      168532   26.366         2   kanal: 89402 57030 39842
+  Normalize rgb (float; OpenCV matris islemleri referansi)        0.000000           0    0.000  0.000000   kanal: 0.000000 0.000000 0.000000
+  (OpenCV'de HSI icin hazir fonksiyon yok; asagidaki bilinen renk ve geri donusum testleriyle dogrulanir)
+
+2) TERS DONUSUMLER (X -> BGR): ayni girdi uzerinde kendi fonksiyon ile OpenCV'nin ters donusumu
+  Donusum                                       mutlak fark top.farkli piksel   oran %  en buyuk
+  YCrCb -> BGR: PDF formulu                                37527       37434    5.856         1   kanal: 33353 105 4069
+  YCrCb -> BGR: OpenCV birebir                                 0           0    0.000         0   kanal: 0 0 0
+  HSV -> BGR: ders kitabi formulu                         621224      459267   71.850         1   kanal: 315959 304368 897
+  HSV -> BGR: float, yuvarlamali (OpenCV tahmini 1)          621396      459423   71.875         1   kanal: 315959 304539 898
+  HSV -> BGR: float, kesmeli (OpenCV tahmini 2)               73          73    0.011         1   kanal: 0 72 1
+  Lab -> BGR: PDF formulu                                  69064       66039   10.332         1   kanal: 32448 14566 22050
+
+3) GIDIS-DONUS (BGR -> X -> BGR), orijinal resme gore hata
+  Donusum                                       mutlak fark top.farkli piksel   oran %  en buyuk
+  YCrCb (OpenCV birebir fonksiyonlarimiz) [kendi]          346501      252051   39.432         1   kanal: 147340 126445 72716
+     ayni donusum, OpenCV ile [OpenCV]                    346501      252051   39.432         1   kanal: 147340 126445 72716
+  HSV (OpenCV birebir ileri + kesmeli ters) [kendi]          682793      463267   72.476         3   kanal: 318535 363372 886
+     ayni donusum, OpenCV ile [OpenCV]                    682808      463264   72.476         3   kanal: 318535 363388 885
+  Lab (PDF fonksiyonlarimiz) [kendi]                      748773      515227   80.605         2   kanal: 325369 115874 307530
+     ayni donusum, OpenCV ile [OpenCV]                    802943      524805   82.103         4   kanal: 334824 154719 313400
+  HSI (kendi fonksiyonlarimiz; OpenCV'de yok) [kendi]               0           0    0.000         0   kanal: 0 0 0
+
+4) UZAYDAN UZAYA DONUSUM (tablodaki gostericilerle: once BGR'ye, sonra hedef uzaya) ve OpenCV ile iki adimli karsilastirma
+  Donusum                                       mutlak fark top.farkli piksel   oran %  en buyuk
+  YCrCb -> HSV                                                 0           0    0.000         0   kanal: 0 0 0
+  HSV -> YCrCb                                               326         258    0.040         1   kanal: 98 213 15
+  YCrCb -> Lab                                            147078      136979   21.430         1   kanal: 60336 52304 34438
+  Lab -> HSV                                               84012       46961    7.347         3   kanal: 20920 50296 12796
+
+5) HSI ve NORMALIZE RGB: bilinen renklerle dogrulama (R, G, B ile verilen tek piksel)
+  Renk      HSI (hesaplanan)                  HSI (beklenen)                          norm. rgb (hesaplanan)  beklenen
+  kirmizi   H = 0.000, S = 1.000, I = 0.333   H = 0, S = 1, I = 0.333                 (1.000, 0.000, 0.000)   (1, 0, 0)
+  yesil     H = 120.000, S = 1.000, I = 0.333 H = 120, S = 1, I = 0.333               (0.000, 1.000, 0.000)   (0, 1, 0)
+  mavi      H = 240.000, S = 1.000, I = 0.333 H = 240, S = 1, I = 0.333               (0.000, 0.000, 1.000)   (0, 0, 1)
+  sari      H = 60.000, S = 1.000, I = 0.667  H = 60, S = 1, I = 0.667                (0.500, 0.500, 0.000)   (0.5, 0.5, 0)
+  beyaz     H = 0.000, S = 0.000, I = 1.000   H = tanimsiz (0), S = 0, I = 1          (0.333, 0.333, 0.333)   (1/3, 1/3, 1/3)
+  gri 128   H = 0.000, S = 0.000, I = 0.502   H = tanimsiz (0), S = 0, I = 0.502      (0.333, 0.333, 0.333)   (1/3, 1/3, 1/3)
+  siyah     H = 0.000, S = 0.000, I = 0.000   H, S tanimsiz (0), I = 0                (0.000, 0.000, 0.000)   tanimsiz (0, 0, 0)
+
+Kaydedilenler (cikti_renk_uzaylari): 4_kanallar_ycrcb_hsv_lab.png (ust: YCrCb kanallari, orta: HSV, alt: Lab)

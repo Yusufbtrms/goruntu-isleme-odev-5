@@ -1,0 +1,144 @@
+Girdi klasoru: images/ThreadsRGB (5 goruntu)
+
+=== [1] image_0_264.jpg (825x573) ===
+  Orijinaldeki renk sinifi ve gri duzeyi (sinif, orijinalin renk tonuna gore belirlendi):
+    sinif                           piksel %    gri ort.     gri std
+    arka plan / soluk                  59.17       247.2        16.1
+    turuncu (organik)                  10.89       204.4        25.6
+    yesil (karisik)                    14.93       215.9        46.4
+    mavi (inorganik / metal)           15.01       100.4        36.5
+  Renklendirmelerin orijinal renkli resimle karsilastirmasi:
+    Palet                                        ort. dE76 dE>25 piksel%   sinif uyumu %   parlaklik sapmasi
+    Kendi paletimiz (parlaklik korumali)             16.96         16.76           78.45                0.00
+    OpenCV JET                                       90.48         99.99           21.52              161.21
+    OpenCV TURBO                                     89.22         99.60           19.12              159.83
+    OpenCV VIRIDIS                                   63.80         94.33           26.79               34.79
+    OpenCV JET (ters gri)                           131.77         99.97            4.10              189.34
+    OpenCV TURBO (ters gri)                         101.73         99.98            2.78              159.30
+    OpenCV VIRIDIS (ters gri)                        98.82         99.31           10.29              169.99
+    Ust sinir (gri duzeye gore en iyi renk)          11.50         14.48           79.43                0.96
+  Kendi paletimiz icin sinif karisiklik matrisi (satir yuzdesi):
+    orijinal / palet    arka plan    turuncu      yesil       mavi piksel sayisi
+    arka plan                90.5        6.3        2.8        0.3        279694
+    turuncu                   0.0       95.1        3.4        1.5         51475
+    yesil                    41.3       28.1       21.1        9.5         70587
+    mavi                      0.0       10.2       13.9       75.9         70969
+
+=== [2] image_0_287.jpg (582x483) ===
+  Orijinaldeki renk sinifi ve gri duzeyi (sinif, orijinalin renk tonuna gore belirlendi):
+    sinif                           piksel %    gri ort.     gri std
+    arka plan / soluk                  47.47       251.5        10.9
+    turuncu (organik)                   4.55       181.5        30.2
+    yesil (karisik)                    16.78       208.9        43.3
+    mavi (inorganik / metal)           31.20       107.9        59.5
+  Renklendirmelerin orijinal renkli resimle karsilastirmasi:
+    Palet                                        ort. dE76 dE>25 piksel%   sinif uyumu %   parlaklik sapmasi
+    Kendi paletimiz (parlaklik korumali)             28.78         34.06           68.37                0.00
+    OpenCV JET                                       90.62         93.82           21.65              139.90
+    OpenCV TURBO                                     90.99         99.36           20.94              142.86
+    OpenCV VIRIDIS                                   65.97         95.30           40.41               33.80
+    OpenCV JET (ters gri)                           122.60         97.44           15.32              162.17
+    OpenCV TURBO (ters gri)                         102.60         98.84           10.53              140.98
+    OpenCV VIRIDIS (ters gri)                       101.33         99.22           19.09              159.72
+    Ust sinir (gri duzeye gore en iyi renk)          14.92         22.65           79.13                2.33
+  Kendi paletimiz icin sinif karisiklik matrisi (satir yuzdesi):
+    orijinal / palet    arka plan    turuncu      yesil       mavi piksel sayisi
+    arka plan                95.3        2.6        1.9        0.2        133438
+    turuncu                   0.0       85.2       11.3        3.5         12791
+    yesil                    26.7       48.2       17.2        8.0         47177
+    mavi                      0.0       34.7       12.8       52.5         87700
+
+=== [3] image_0_294.jpg (654x520) ===
+  Orijinaldeki renk sinifi ve gri duzeyi (sinif, orijinalin renk tonuna gore belirlendi):
+    sinif                           piksel %    gri ort.     gri std
+    arka plan / soluk                  60.74       250.7        12.6
+    turuncu (organik)                  10.65       197.0        43.7
+    yesil (karisik)                    16.24       199.7        50.3
+    mavi (inorganik / metal)           12.37        67.3        43.0
+  Renklendirmelerin orijinal renkli resimle karsilastirmasi:
+    Palet                                        ort. dE76 dE>25 piksel%   sinif uyumu %   parlaklik sapmasi
+    Kendi paletimiz (parlaklik korumali)             15.00         16.21           83.57                0.00
+    OpenCV JET                                       88.83         99.98           21.13              163.84
+    OpenCV TURBO                                     85.94         99.55           19.85              165.16
+    OpenCV VIRIDIS                                   63.08         91.96           24.07               35.42
+    OpenCV JET (ters gri)                           129.45         99.99            3.07              191.53
+    OpenCV TURBO (ters gri)                          99.55         99.98            3.17              165.02
+    OpenCV VIRIDIS (ters gri)                       102.95         99.60            5.18              178.76
+    Ust sinir (gri duzeye gore en iyi renk)           8.30         12.63           81.97                1.00
+  Kendi paletimiz icin sinif karisiklik matrisi (satir yuzdesi):
+    orijinal / palet    arka plan    turuncu      yesil       mavi piksel sayisi
+    arka plan                97.0        2.0        0.7        0.3        206576
+    turuncu                   0.0       83.0        4.5       12.5         36211
+    yesil                     9.1       49.2       28.0       13.7         55224
+    mavi                      0.0        2.9        5.9       91.1         42069
+
+=== [4] image_0_380.jpg (722x507) ===
+  Orijinaldeki renk sinifi ve gri duzeyi (sinif, orijinalin renk tonuna gore belirlendi):
+    sinif                           piksel %    gri ort.     gri std
+    arka plan / soluk                  37.31       242.8        23.4
+    turuncu (organik)                  32.02       209.9        23.2
+    yesil (karisik)                    18.41       217.4        42.5
+    mavi (inorganik / metal)           12.27       103.8        33.4
+  Renklendirmelerin orijinal renkli resimle karsilastirmasi:
+    Palet                                        ort. dE76 dE>25 piksel%   sinif uyumu %   parlaklik sapmasi
+    Kendi paletimiz (parlaklik korumali)             16.12         18.24           76.57                0.00
+    OpenCV JET                                       86.78         99.98           39.81              143.71
+    OpenCV TURBO                                     82.73         99.17           37.42              139.44
+    OpenCV VIRIDIS                                   59.43         94.02           27.20               34.45
+    OpenCV JET (ters gri)                           135.78        100.00            3.20              174.48
+    OpenCV TURBO (ters gri)                         101.89         99.99            2.96              134.81
+    OpenCV VIRIDIS (ters gri)                        95.68         98.15            9.31              155.20
+    Ust sinir (gri duzeye gore en iyi renk)          11.83         15.58           76.41                0.82
+  Kendi paletimiz icin sinif karisiklik matrisi (satir yuzdesi):
+    orijinal / palet    arka plan    turuncu      yesil       mavi piksel sayisi
+    arka plan                83.6       11.3        4.3        0.8        136576
+    turuncu                   0.0       97.1        2.0        1.0        117194
+    yesil                    33.4       33.0       27.0        6.6         67374
+    mavi                      0.0        5.2       18.9       75.9         44910
+
+=== [5] image_0_387.jpg (778x503) ===
+  Orijinaldeki renk sinifi ve gri duzeyi (sinif, orijinalin renk tonuna gore belirlendi):
+    sinif                           piksel %    gri ort.     gri std
+    arka plan / soluk                  57.76       251.3        10.0
+    turuncu (organik)                   8.40       192.8        24.6
+    yesil (karisik)                    13.67       212.6        43.7
+    mavi (inorganik / metal)           20.17       126.0        37.4
+  Renklendirmelerin orijinal renkli resimle karsilastirmasi:
+    Palet                                        ort. dE76 dE>25 piksel%   sinif uyumu %   parlaklik sapmasi
+    Kendi paletimiz (parlaklik korumali)             21.27         21.69           76.07                0.00
+    OpenCV JET                                       94.36         99.71           16.08              158.74
+    OpenCV TURBO                                     93.30         98.27           14.48              156.14
+    OpenCV VIRIDIS                                   69.85         96.96           29.60               34.65
+    OpenCV JET (ters gri)                           123.24         99.04            9.81              180.54
+    OpenCV TURBO (ters gri)                         100.88         99.73            6.25              156.53
+    OpenCV VIRIDIS (ters gri)                        94.33         99.14           17.33              165.98
+    Ust sinir (gri duzeye gore en iyi renk)          14.18         19.89           81.15                1.86
+  Kendi paletimiz icin sinif karisiklik matrisi (satir yuzdesi):
+    orijinal / palet    arka plan    turuncu      yesil       mavi piksel sayisi
+    arka plan                95.9        2.7        1.4        0.1        226034
+    turuncu                   0.0       97.7        2.1        0.2         32871
+    yesil                    31.1       40.9       21.3        6.8         53513
+    mavi                      0.0       31.9       20.5       47.6         78916
+
+=== TUM GORUNTULERIN ORTALAMASI (5 goruntu) ===
+    Palet                                        ort. dE76   sinif uyumu %   parlaklik sapmasi
+    Kendi paletimiz (parlaklik korumali)             19.63           76.60                0.00
+    OpenCV JET                                       90.22           24.04              153.48
+    OpenCV TURBO                                     88.44           22.36              152.69
+    OpenCV VIRIDIS                                   64.43           29.62               34.62
+    OpenCV JET (ters gri)                           128.57            7.10              179.61
+    OpenCV TURBO (ters gri)                         101.33            5.14              151.33
+    OpenCV VIRIDIS (ters gri)                        98.62           12.24              165.93
+    Ust sinir (gri duzeye gore en iyi renk)          12.14           79.62                1.39
+  
+TUM GORUNTULER: kendi paletimiz icin sinif karisiklik matrisi (satir yuzdesi):
+    orijinal / palet    arka plan    turuncu      yesil       mavi piksel sayisi
+    arka plan                92.8        4.8        2.1        0.3        982318
+    turuncu                   0.0       94.1        3.1        2.8        250542
+    yesil                    29.2       38.7       23.1        8.9        293875
+    mavi                      0.0       20.5       14.9       64.6        324564
+
+Kaydedilenler (cikti_xray):
+  5_goruntuK_gri.png, 5_goruntuK_renkli_kendi_palet.png : K. goruntunun gri hali ve kendi paletimizle renklendirilmis hali
+  5_goruntuK_karsilastirma.png                          : orijinal, gri ve tum renklendirmeler yan yana
+  5_palet_seritleri.png                                 : paletlerin gri duzeyden renge eslemesi

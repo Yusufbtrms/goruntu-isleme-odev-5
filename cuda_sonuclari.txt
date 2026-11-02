@@ -1,0 +1,34 @@
+GPU: Tesla T4 (hesaplama yetenegi 7.5, 40 islemci)
+Renkli resim: images/Cat.jpg (1600x1598, 2556800 piksel)
+
+GOREV 1-2: KANAL HISTOGRAMLARI (3 kanal x 256 kutu)
+  Yontem                                       CPU ms GPU cekirdek GPU toplam   hizl. cek.|GPU - CPU| top.
+  GPU naif (global atomik)                      4.304        1.318      2.892         3.3x              0
+  GPU paylasilan bellek (blok basina)           4.304        0.154      1.707        28.0x              0
+
+GOREV 3 ve 4: GRI VE RENK UZAYI DONUSUMLERI (renkli resim; farkli eleman: kanal bazinda en az bir farkli deger olan piksel sayisi)
+  Islem                                        CPU ms GPU cekirdek GPU toplam   hizl. cek. hizl. toplam farkli eleman   en buyuk
+  Gri (15 bit sabit nokta)                      3.507        0.063      2.263        55.3x         1.5x             0   0.000000
+  BGR -> YCrCb                                  9.257        0.089      3.406       104.5x         2.7x             0   0.000000
+  YCrCb -> BGR                                  9.293        0.085      3.314       109.1x         2.8x             0   0.000000
+  BGR -> HSV                                   31.941        0.132      3.431       241.2x         9.3x             0   0.000000
+  HSV -> BGR (kesmeli)                         28.914        0.109      3.308       266.4x         8.7x             0   0.000000
+  BGR -> Lab (PDF formulu)                    453.045       14.238     13.058        31.8x        34.7x             0   0.000000
+  Lab -> BGR (PDF formulu)                    257.630        8.471     11.632        30.4x        22.1x             0   0.000000
+  BGR -> HSI (float; esik 1e-3)                89.329        2.693     11.002        33.2x         8.1x             0   0.000000
+  HSI -> BGR                                  139.846        1.753     10.118        79.8x        13.8x             0   0.000000
+  BGR -> normalize rgb (float; esik 1e-6)      12.104        0.194      9.233        62.4x         1.3x             0   0.000000
+
+  Bilgi: kendi (CPU) sonuclarimiz ile bu makinedeki OpenCV 4.6.0 cvtColor sonucu (surum farki varsa sifir olmayabilir):
+  Gri                       farkli deger sayisi: 0  (mutlak fark toplami 0)
+  YCrCb                     farkli deger sayisi: 0  (mutlak fark toplami 0)
+  HSV                       farkli deger sayisi: 0  (mutlak fark toplami 0)
+  Lab (PDF formulu)         farkli deger sayisi: 748757  (mutlak fark toplami 749586)
+
+X-ray resmi: images/ThreadsRGB/image_0_287.jpg (582x483, 281106 piksel)
+GOREV 5: X-RAY GRI VE RENKLENDIRME
+  Islem                                        CPU ms GPU cekirdek GPU toplam   hizl. cek. hizl. toplam farkli eleman   en buyuk
+  X-ray: gri                                    0.763        0.005      0.744       157.6x         1.0x             0   0.000000
+  X-ray: gri -> renk (arama tablosu)            0.466        0.057      0.525         8.2x         0.9x             0   0.000000
+  X-ray: BGR -> renk (tek cekirdekte)           0.741        0.006      0.508       116.7x         1.5x             0   0.000000
+  GPU sonuclari kaydedildi: cikti_cuda/cuda_xray_gri.png, cikti_cuda/cuda_xray_renkli.png
